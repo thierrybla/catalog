@@ -3,13 +3,16 @@ image:
   pullPolicy: IfNotPresent
   tag: v0.20.781@sha256:96eae64bdf60250418ef7581fa5387c58b2c5963be19582ebc4151ccacc7c488
 
-probes:
-  liveness:
-    enabled: true
-    ## Set this to true if you wish to specify your own livenessProbe
-    custom: true
-    ## The spec field contains the values for the default livenessProbe.
-    ## If you selected custom: true, this field holds the definition of the livenessProbe.
-    spec:
-      initialDelaySeconds: 300
-      periodSeconds: 30
+livenessProbe:
+  # enabled is a flag to used to enable liveness probe
+  enabled: true
+  # initialDelaySeconds is a delay before liveness probe is initiated
+  initialDelaySeconds: 30
+  # periodSeconds decides how often to perform the probe
+  periodSeconds: 10
+  # timeoutSeconds decides when the probe times out
+  timeoutSeconds: 10
+  # successThreshold is the minimum consecutive successes for the probe to be considered successful after having failed
+  successThreshold: 1
+  # failureThreshold is the minimum consecutive failures for the probe to be considered failed after having succeeded
+  failureThreshold: 10
