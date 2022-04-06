@@ -14,10 +14,10 @@ probes:
       tcpSocket:
         port: 3306
       failureThreshold: 5
-      initialDelaySeconds: 30
-      periodSeconds: 30
+      initialDelaySeconds: 300
+      periodSeconds: 300
       successThreshold: 1
-      timeoutSeconds: 30
+      timeoutSeconds: 300
       
   readiness:
     enabled: true
@@ -29,10 +29,10 @@ probes:
       tcpSocket:
         port: 3306
       failureThreshold: 5
-      initialDelaySeconds: 30
-      periodSeconds: 30
+      initialDelaySeconds: 300
+      periodSeconds: 300
       successThreshold: 1
-      timeoutSeconds: 30
+      timeoutSeconds: 300
     
   startup:
     enabled: true
@@ -44,7 +44,7 @@ probes:
       tcpSocket:
         port: 3306
       failureThreshold: 5
-      initialDelaySeconds: 30
-      periodSeconds: 30
+      initialDelaySeconds: 300
+      periodSeconds: 300
       successThreshold: 1
-      timeoutSeconds: 30
+      timeoutSeconds: 300
