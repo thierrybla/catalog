@@ -7,9 +7,9 @@ livenessProbe:
   # enabled is a flag to used to enable liveness probe
   enabled: true
   # initialDelaySeconds is a delay before liveness probe is initiated
-  initialDelaySeconds: 30
+  initialDelaySeconds: 300
   # periodSeconds decides how often to perform the probe
-  periodSeconds: 10
+  periodSeconds: 30
   # timeoutSeconds decides when the probe times out
   timeoutSeconds: 10
   # successThreshold is the minimum consecutive successes for the probe to be considered successful after having failed
@@ -21,9 +21,9 @@ readinessProbe:
   # enabled is a flag to used to enable readiness probe
   enabled: true
   # initialDelaySeconds is a delay before readiness probe is initiated
-  initialDelaySeconds: 30
+  initialDelaySeconds: 300
   # periodSeconds decides how often to perform the probe
-  periodSeconds: 10
+  periodSeconds: 30
   # timeoutSeconds decides when the probe times out
   timeoutSeconds: 10
   # successThreshold is the minimum consecutive successes for the probe to be considered successful after having failed
