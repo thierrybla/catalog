@@ -10,6 +10,12 @@ livenessProbe:
   initialDelaySeconds: 300
   # periodSeconds decides how often to perform the probe
   periodSeconds: 30
+  # timeoutSeconds decides when the probe times out
+  timeoutSeconds: 600
+  # successThreshold is the minimum consecutive successes for the probe to be considered successful after having failed
+  successThreshold: 1
+  # failureThreshold is the minimum consecutive failures for the probe to be considered failed after having succeeded
+  failureThreshold: 10
   
 readinessProbe:
   # enabled is a flag to used to enable readiness probe
@@ -18,6 +24,12 @@ readinessProbe:
   initialDelaySeconds: 300
   # periodSeconds decides how often to perform the probe
   periodSeconds: 30
+  # timeoutSeconds decides when the probe times out
+  timeoutSeconds: 600
+  # successThreshold is the minimum consecutive successes for the probe to be considered successful after having failed
+  successThreshold: 1
+  # failureThreshold is the minimum consecutive failures for the probe to be considered failed after having succeeded
+  failureThreshold: 10
 
 startupProbe:
   # enabled is a flag to used to enable readiness probe
@@ -26,3 +38,9 @@ startupProbe:
   initialDelaySeconds: 300
   # periodSeconds decides how often to perform the probe
   periodSeconds: 30
+  # timeoutSeconds decides when the probe times out
+  timeoutSeconds: 600
+  # successThreshold is the minimum consecutive successes for the probe to be considered successful after having failed
+  successThreshold: 1
+  # failureThreshold is the minimum consecutive failures for the probe to be considered failed after having succeeded
+  failureThreshold: 10
