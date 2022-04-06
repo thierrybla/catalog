@@ -3,13 +3,6 @@ image:
   pullPolicy: IfNotPresent
   tag: v0.20.781@sha256:96eae64bdf60250418ef7581fa5387c58b2c5963be19582ebc4151ccacc7c488
 
-service:
-  main:
-    ports:
-      main:
-        port: 3306
-        targetPort: 3306
-
 probes:
   liveness:
     enabled: true
@@ -25,8 +18,33 @@ probes:
       periodSeconds: 30
       successThreshold: 1
       timeoutSeconds: 30
-
-persistence:
-  config:
+      
+  readiness:
     enabled: true
-    mountPath: "/config"
+    ## Set this to true if you wish to specify your own livenessProbe
+    custom: true
+    ## The spec field contains the values for the default livenessProbe.
+    ## If you selected custom: true, this field holds the definition of the livenessProbe.
+    spec:
+      tcpSocket:
+        port: 3306
+      failureThreshold: 5
+      initialDelaySeconds: 30
+      periodSeconds: 30
+      successThreshold: 1
+      timeoutSeconds: 30
+    
+  startup:
+    enabled: true
+    ## Set this to true if you wish to specify your own livenessProbe
+    custom: true
+    ## The spec field contains the values for the default livenessProbe.
+    ## If you selected custom: true, this field holds the definition of the livenessProbe.
+    spec:
+      tcpSocket:
+        port: 3306
+      failureThreshold: 5
+      initialDelaySeconds: 30
+      periodSeconds: 30
+      successThreshold: 1
+      timeoutSeconds: 30
