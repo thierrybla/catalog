@@ -18,14 +18,13 @@ probes:
     ## The spec field contains the values for the default livenessProbe.
     ## If you selected custom: true, this field holds the definition of the livenessProbe.
     spec:
-      httpGet:
-        path: /
+      tcpSocket:
         port: 3000
       failureThreshold: 5
-      initialDelaySeconds: 300
+      initialDelaySeconds: 30
       periodSeconds: 30
       successThreshold: 1
-      timeoutSeconds: 100
+      timeoutSeconds: 30
 
 persistence:
   config:
