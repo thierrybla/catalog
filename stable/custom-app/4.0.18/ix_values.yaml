@@ -11,8 +11,5 @@ probes:
     ## The spec field contains the values for the default livenessProbe.
     ## If you selected custom: true, this field holds the definition of the livenessProbe.
     spec:
-      failureThreshold: 5
       initialDelaySeconds: 300
       periodSeconds: 30
-      successThreshold: 1
-      timeoutSeconds: 10
